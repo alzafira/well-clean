@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazing Space | Professional Washing & Cleaning</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,6 +34,11 @@
         /* Custom Styles */
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
+        /* New Static Hero Background class */
+        .hero-static-bg {
+            background-image: url('https://res.cloudinary.com/dutt5ibzr/image/upload/v1775928367/tak5dchhrhxf0svx5bdm.jpg');
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -78,7 +80,6 @@
 </head>
 <body class="bg-light text-slate-800 antialiased">
 
-    <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
@@ -94,7 +95,6 @@
                         <i class="fa-solid fa-phone text-primary"></i> +1 (555) 012-3456
                     </a>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button class="text-white hover:text-primary focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -104,22 +104,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-slate-900">
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-cover bg-center bg-no-repeat hero-static-bg">
         
-        <!-- Video Background -->
-        <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-            <!-- Vimeo iframe with responsive object-fit-like scaling -->
-            <iframe 
-                src="https://player.vimeo.com/video/1182191307?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-                class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
-                frameborder="0" 
-                allow="autoplay; fullscreen" 
-                allowfullscreen>
-            </iframe>
-            <!-- Dark gradient overlay to ensure text readability -->
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/70"></div>
-        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/70 z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
@@ -146,7 +133,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-24 bg-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 gsap-fade-up">
@@ -157,7 +143,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1: Water Tanks -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
                     <div class="w-14 h-14 bg-sky-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-water"></i>
@@ -172,7 +157,6 @@
                     </ul>
                 </div>
 
-                <!-- Service 2: Exterior Surfaces -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
                     <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-house-chimney"></i>
@@ -187,7 +171,6 @@
                     </ul>
                 </div>
 
-                <!-- Service 3: Commercial & Industrial -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
                     <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-industry"></i>
@@ -202,7 +185,6 @@
                     </ul>
                 </div>
 
-                 <!-- Service 4: Specialty -->
                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service lg:col-start-2">
                     <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-car-side"></i>
@@ -220,9 +202,7 @@
         </div>
     </section>
 
-    <!-- Booking Section with WhatsApp Bot -->
     <section id="booking" class="py-24 relative overflow-hidden bg-white">
-        <!-- Abstract background elements -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-400/5 blur-3xl"></div>
 
@@ -256,9 +236,7 @@
                     </div>
                 </div>
 
-                <!-- WhatsApp Booking Form -->
                 <div class="glass-card rounded-3xl p-8 lg:p-10 relative gsap-book-form">
-                    <!-- Decor -->
                     <div class="absolute -top-6 -right-6 text-[#25d366] text-6xl opacity-20">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
@@ -266,7 +244,6 @@
                     <form id="waBookingForm" class="space-y-6 relative z-10">
                         <h3 class="text-2xl font-bold text-dark mb-6 border-b pb-4">Schedule Service</h3>
                         
-                        <!-- Name -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
                             <div class="relative">
@@ -277,7 +254,6 @@
                             </div>
                         </div>
 
-                        <!-- Service Select -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Required Service</label>
                             <div class="relative">
@@ -313,21 +289,17 @@
                             </div>
                         </div>
 
-                        <!-- Date and Time Group -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Date -->
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Date</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <i class="fa-regular fa-calendar text-slate-400"></i>
                                     </div>
-                                    <!-- Auto populated via JS -->
                                     <input type="date" id="waDate" required class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50">
                                 </div>
                             </div>
                             
-                            <!-- Time & AM/PM -->
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Time</label>
                                 <div class="flex gap-2">
@@ -336,8 +308,7 @@
                                             <i class="fa-regular fa-clock text-slate-400"></i>
                                         </div>
                                         <select id="waTimeHour" class="w-full pl-10 pr-2 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50 appearance-none">
-                                            <!-- JS will populate 01:00 to 12:30 -->
-                                        </select>
+                                            </select>
                                     </div>
                                     <div class="w-1/3">
                                         <select id="waAMPM" class="w-full px-2 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50 appearance-none text-center">
@@ -358,7 +329,6 @@
         </div>
     </section>
 
-    <!-- Location / Map Section -->
     <section id="location" class="py-24 bg-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 gsap-fade-up">
@@ -369,7 +339,6 @@
             </div>
 
             <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 h-[500px] relative gsap-map">
-                <!-- Interactive Google Map (Generic location embed without API key for demo) -->
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2528000654!2d-74.14482939311202!3d40.697663748641976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1698246394200!5m2!1sen!2sus" 
                     width="100%" 
@@ -380,7 +349,6 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 
-                <!-- Overlay Contact Info -->
                 <div class="absolute bottom-6 left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-sm hidden md:block">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
@@ -399,12 +367,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white pt-16 pb-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 
-                <!-- Brand -->
                 <div class="col-span-1 lg:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
                         <i class="fa-solid fa-droplet text-primary text-3xl"></i>
@@ -426,7 +392,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-lg font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
@@ -437,7 +402,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div>
                     <h4 class="text-lg font-bold mb-6">Contact Us</h4>
                     <ul class="space-y-4">
@@ -467,18 +431,20 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/15550123456" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- GSAP & Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
+            // Error check to help you debug locally
+            if (typeof tailwind === 'undefined') {
+                console.error("Tailwind CSS failed to load. Please check your internet connection or if your hosting platform is blocking CDN scripts.");
+            }
+
             // --- Navbar Scroll Effect ---
             const navbar = document.getElementById('navbar');
             const logoText = document.getElementById('logo-text');
