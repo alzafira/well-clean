@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Space | Professional Washing & Cleaning</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9', // Sky blue
+                        secondary: '#0284c7', // Darker blue
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+        .float-wa:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-light text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-droplet text-primary text-3xl"></i>
+                    <span class="text-white font-bold text-2xl tracking-tight" id="logo-text">Amazing Space</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-white hover:text-primary transition font-medium">Home</a>
+                    <a href="#services" class="text-white hover:text-primary transition font-medium">Services</a>
+                    <a href="#booking" class="text-white hover:text-primary transition font-medium">Book Now</a>
+                    <a href="tel:+15550123456" class="flex items-center gap-2 text-white font-semibold">
+                        <i class="fa-solid fa-phone text-primary"></i> +1 (555) 012-3456
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-white hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-slate-900">
+        
+        <!-- Video Background -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <!-- Vimeo iframe with responsive object-fit-like scaling -->
+            <iframe 
+                src="https://player.vimeo.com/video/1182191307?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+                class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
+                frameborder="0" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen>
+            </iframe>
+            <!-- Dark gradient overlay to ensure text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/70"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="gsap-hero">
+                    <span class="inline-block py-1 px-3 rounded-none bg-primary/20 text-primary font-semibold text-sm mb-6 border border-primary/30">
+                        <i class="fa-solid fa-medal mr-2"></i>Premium Cleaning Services
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        Revitalize Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">Amazing Space</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                        Professional washing & cleaning solutions for residential, commercial, and industrial properties. We clean everything from overhead water tanks to warehouse floors.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#booking" class="px-8 py-4 bg-primary hover:bg-secondary text-white rounded-none font-bold text-lg transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                            Book Now <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="tel:+15550123456" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-none font-bold text-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 gsap-fade-up">
+                <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Our Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Comprehensive Cleaning Solutions</h3>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-600 text-lg">We utilize state-of-the-art equipment and eco-friendly products to deliver unmatched cleanliness across a massive range of surfaces and structures.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Water Tanks -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
+                    <div class="w-14 h-14 bg-sky-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Water Tank Cleaning</h4>
+                    <p class="text-slate-600 mb-6 text-sm">Ensuring your water supply remains pure and safe with professional tank sanitization.</p>
+                    <ul class="space-y-2 text-slate-700 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Overhead Water Tanks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Underground Water Tanks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Loft Water Tanks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Water Tanks Containers</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Exterior Surfaces -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Exterior & Surfaces</h4>
+                    <p class="text-slate-600 mb-6 text-sm">Restoring the curb appeal of your property by removing years of dirt, grime, and mold.</p>
+                    <ul class="space-y-2 text-slate-700 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Pavers, Sidewalks & Driveways</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Walls, Windows & Roofs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Fences, Decks & Rails</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Doors, Gates & Gadones</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Commercial & Industrial -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Commercial & Industrial</h4>
+                    <p class="text-slate-600 mb-6 text-sm">Heavy-duty cleaning for businesses, warehouses, and industrial equipment.</p>
+                    <ul class="space-y-2 text-slate-700 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Warehouse Floors & Ramps</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Parking Lots & Garage Floors</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Store Fronts & Restaurants</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Industrial Equipment</li>
+                    </ul>
+                </div>
+
+                 <!-- Service 4: Specialty -->
+                 <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 service-card gsap-service lg:col-start-2">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Specialty Services</h4>
+                    <p class="text-slate-600 mb-6 text-sm">Detail-oriented cleaning for vehicles and recreational areas.</p>
+                    <ul class="space-y-2 text-slate-700 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Vehicles Washing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Swimming Pools</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Glass & Display Windows</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> General Site Cleanup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section with WhatsApp Bot -->
+    <section id="booking" class="py-24 relative overflow-hidden bg-white">
+        <!-- Abstract background elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-400/5 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="gsap-book-text">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">Fast & Easy Booking via <span class="text-[#25d366]">WhatsApp</span></h2>
+                    <p class="text-slate-600 text-lg mb-8">
+                        Skip the long phone calls. Use our automated WhatsApp booking system to schedule your cleaning service instantly. Just fill out the details and click book!
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-[#25d366]/10 text-[#25d366] rounded-full flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bolt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark">Instant Confirmation</h4>
+                                <p class="text-slate-500 text-sm mt-1">Chat directly with our team immediately after submitting.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-calendar-check text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark">Flexible Scheduling</h4>
+                                <p class="text-slate-500 text-sm mt-1">Choose the exact date and time that works best for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Booking Form -->
+                <div class="glass-card rounded-3xl p-8 lg:p-10 relative gsap-book-form">
+                    <!-- Decor -->
+                    <div class="absolute -top-6 -right-6 text-[#25d366] text-6xl opacity-20">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+                    <form id="waBookingForm" class="space-y-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-dark mb-6 border-b pb-4">Schedule Service</h3>
+                        
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fa-regular fa-user text-slate-400"></i>
+                                </div>
+                                <input type="text" id="waName" required class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50" placeholder="John Doe">
+                            </div>
+                        </div>
+
+                        <!-- Service Select -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Required Service</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fa-solid fa-broom text-slate-400"></i>
+                                </div>
+                                <select id="waService" required class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50 appearance-none">
+                                    <option value="" disabled selected>Select a cleaning service</option>
+                                    <optgroup label="Water Tanks">
+                                        <option value="Overhead Tank">Overhead Water Tank</option>
+                                        <option value="Underground Tank">Underground Water Tank</option>
+                                        <option value="Loft Tank">Loft Water Tank</option>
+                                        <option value="Tank Containers">Water Tank Containers</option>
+                                    </optgroup>
+                                    <optgroup label="Surfaces & Exteriors">
+                                        <option value="Pavers/Sidewalks">Pavers & Sidewalks</option>
+                                        <option value="Driveways">Driveways</option>
+                                        <option value="Walls/Windows/Roofs">Walls, Windows & Roofs</option>
+                                        <option value="Fences/Decks">Fences, Decks & Rails</option>
+                                        <option value="Swimming Pools">Swimming Pools</option>
+                                        <option value="Gadones/Doors/Gates">Gadones, Doors & Gates</option>
+                                    </optgroup>
+                                    <optgroup label="Commercial">
+                                        <option value="Warehouse Floors">Warehouse Floors & Ramps</option>
+                                        <option value="Parking Lots">Parking Lots & Garage Floors</option>
+                                        <option value="Store Fronts/Restaurants">Store Fronts & Restaurants</option>
+                                        <option value="Equipments">Industrial Equipment</option>
+                                    </optgroup>
+                                    <optgroup label="Vehicles">
+                                        <option value="Vehicle Washing">Vehicle Washing</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Date and Time Group -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Date -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Date</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-regular fa-calendar text-slate-400"></i>
+                                    </div>
+                                    <!-- Auto populated via JS -->
+                                    <input type="date" id="waDate" required class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50">
+                                </div>
+                            </div>
+                            
+                            <!-- Time & AM/PM -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Time</label>
+                                <div class="flex gap-2">
+                                    <div class="relative w-2/3">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fa-regular fa-clock text-slate-400"></i>
+                                        </div>
+                                        <select id="waTimeHour" class="w-full pl-10 pr-2 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50 appearance-none">
+                                            <!-- JS will populate 01:00 to 12:30 -->
+                                        </select>
+                                    </div>
+                                    <div class="w-1/3">
+                                        <select id="waAMPM" class="w-full px-2 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition bg-white/50 appearance-none text-center">
+                                            <option value="AM" selected>AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-[#25d366] hover:bg-[#1ebd5a] text-white rounded-lg font-bold text-lg transition shadow-lg shadow-[#25d366]/30 flex items-center justify-center gap-3 mt-4">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Book via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location / Map Section -->
+    <section id="location" class="py-24 bg-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 gsap-fade-up">
+                <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Find Us</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Our Service Area</h3>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-600 text-lg">We provide on-site cleaning services across the metropolitan area. View our location map below.</p>
+            </div>
+
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 h-[500px] relative gsap-map">
+                <!-- Interactive Google Map (Generic location embed without API key for demo) -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2528000654!2d-74.14482939311202!3d40.697663748641976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1698246394200!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                
+                <!-- Overlay Contact Info -->
+                <div class="absolute bottom-6 left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-sm hidden md:block">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-map-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Amazing Space HQ</h4>
+                            <p class="text-sm text-slate-500">Central Business District</p>
+                        </div>
+                    </div>
+                    <a href="tel:+15550123456" class="block w-full text-center py-2 bg-dark text-white rounded-lg font-medium hover:bg-slate-800 transition">
+                        Call +1 (555) 012-3456
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-droplet text-primary text-3xl"></i>
+                        <span class="text-white font-bold text-2xl tracking-tight">Amazing Space</span>
+                    </div>
+                    <p class="text-slate-400 mb-6 max-w-md">
+                        The ultimate destination for professional washing and cleaning services. Transforming spaces with precision and care.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-400 hover:text-primary transition">Home</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-primary transition">Our Services</a></li>
+                        <li><a href="#booking" class="text-slate-400 hover:text-primary transition">Book Appointment</a></li>
+                        <li><a href="#location" class="text-slate-400 hover:text-primary transition">Location Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-primary mt-1"></i>
+                            <span class="text-slate-400">+1 (555) 012-3456</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-[#25d366] mt-1 text-lg"></i>
+                            <span class="text-slate-400">Available on WhatsApp</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-primary mt-1"></i>
+                            <span class="text-slate-400">hello@amazingspace.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Amazing Space Cleaning Services. All rights reserved.</p>
+                <div class="flex gap-4 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/15550123456" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- GSAP & Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Navbar Scroll Effect ---
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('logo-text');
+            const navLinks = navbar.querySelectorAll('a:not(.bg-primary)');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white', 'shadow-md');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-2');
+                    logoText.classList.remove('text-white');
+                    logoText.classList.add('text-dark');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-slate-600');
+                    });
+                } else {
+                    navbar.classList.remove('bg-white', 'shadow-md');
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-2');
+                    logoText.classList.add('text-white');
+                    logoText.classList.remove('text-dark');
+                    navLinks.forEach(link => {
+                        link.classList.add('text-white');
+                        link.classList.remove('text-slate-600');
+                    });
+                }
+            });
+
+            // --- Form Auto-Population Logic ---
+            // Set date to tomorrow
+            const dateInput = document.getElementById('waDate');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+            dateInput.min = new Date().toISOString().split('T')[0]; // Can't book in past
+
+            // Populate Time Hours dropdown (e.g., 08:00, 08:30, 09:00...)
+            const timeSelect = document.getElementById('waTimeHour');
+            for(let i = 7; i <= 12; i++) {
+                let hour = i < 10 ? `0${i}` : i;
+                timeSelect.innerHTML += `<option value="${hour}:00">${hour}:00</option>`;
+                timeSelect.innerHTML += `<option value="${hour}:30">${hour}:30</option>`;
+            }
+            // Add a few PM slots to dropdown just to keep list reasonable
+            for(let i = 1; i <= 6; i++) {
+                let hour = `0${i}`;
+                timeSelect.innerHTML += `<option value="${hour}:00">${hour}:00</option>`;
+                timeSelect.innerHTML += `<option value="${hour}:30">${hour}:30</option>`;
+            }
+            timeSelect.value = "09:00"; // Default
+
+            // --- WhatsApp Bot Handler ---
+            document.getElementById('waBookingForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('waName').value;
+                const service = document.getElementById('waService').value;
+                const date = document.getElementById('waDate').value;
+                const timeHour = document.getElementById('waTimeHour').value;
+                const ampm = document.getElementById('waAMPM').value;
+                
+                const phone = "15550123456";
+                const message = `*New Booking Request!* 🧹💧\n\n*Name:* ${name}\n*Service Required:* ${service}\n*Date:* ${date}\n*Time:* ${timeHour} ${ampm}\n\nPlease confirm availability. Thank you!`;
+                
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // --- GSAP Animations ---
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero Animations
+            const heroTl = gsap.timeline();
+            heroTl.from('.gsap-hero > *', {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+
+            // Global fade up elements
+            gsap.utils.toArray('.gsap-fade-up').forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    },
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            });
+
+            // Services stagger
+            gsap.from('.gsap-service', {
+                scrollTrigger: {
+                    trigger: '#services',
+                    start: "top 70%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "back.out(1.2)"
+            });
+
+            // Booking Section
+            gsap.from('.gsap-book-text', {
+                scrollTrigger: {
+                    trigger: '#booking',
+                    start: "top 75%",
+                },
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            gsap.from('.gsap-book-form', {
+                scrollTrigger: {
+                    trigger: '#booking',
+                    start: "top 75%",
+                },
+                x: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Map Section
+            gsap.from('.gsap-map', {
+                scrollTrigger: {
+                    trigger: '#location',
+                    start: "top 75%",
+                },
+                scale: 0.95,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>
